@@ -1,6 +1,7 @@
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import Chroma
 
 # Parte 1 - Ingesta y preparación de datos (rag.png)
 
@@ -16,5 +17,6 @@ splits = text_splitter.split_documents(docs)
 embeddings = OllamaEmbeddings(model = "nomic-embed-text")
 
 #4. Vector DB (Chroma)
+vectorstore = Chroma.from_documents(documents = splits, embbeding = embeddings)
 
 # Parte 2 - Consulta y generación (rag.png)
