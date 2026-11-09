@@ -1,0 +1,21 @@
+Tareas:
+1	Desayunar y revisar el correo
+2	Planificar el día y definir prioridades
+3	Sesión de trabajo profundo (tarea principal)
+4	Hacer ejercicio o paseo (30 min)
+5	Reunión / llamada de trabajo
+6	Responder mensajes pendientes
+7	Pausa activa (estiramientos, café)
+8	Segunda sesión de trabajo profundo
+9	Comer
+10	Tareas administrativas (facturas, citas, trámites)
+11	Revisar y actualizar el repositorio / código
+12	Revisión de progreso y ajustes en el plan
+13	Tarea creativa o de aprendizaje (leer, curso, documentación)
+14	Colaborar / code review con el equipo
+15	Limpiar y organizar el espacio de trabajo
+16	Preparar la agenda para el día siguiente
+17	Tarea doméstica (cocinar, limpiar, etc.)
+18	Cena
+19	Tiempo libre / ocio (serie, hobby, socializar)
+20	Rutina de cierre: revisar lo hecho, preparar ropa/maleta, apagar pantallas
