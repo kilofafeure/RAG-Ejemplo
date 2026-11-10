@@ -1,22 +1,11 @@
-from langchain_ollama import OllamaEmbeddings, ChatOllama
-from langchain_chroma import Chroma
+from vectorstore import create_vectorstore
+from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
-CHROMA_DIR = "./chroma_db"
-
-# ---------- PARTE 2: Consulta RAG ----------
-
-# 1. Cargar la base de datos ya existente desde disco
-embeddings = OllamaEmbeddings(model="nomic-embed-text")
-
-# Importante: usar Chroma(persist_directory=...) en lugar de from_documents()
-# Esto reconstruye el vectorstore desde los datos guardados
-vectorstore = Chroma(
-    persist_directory=CHROMA_DIR,
-    embedding_function=embeddings
-)
+# 1. Cargar la base de datos ya existente
+vectorstore = create_vectorstore() # Sin documentos, carga desde disco
 
 retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
 
@@ -40,6 +29,7 @@ rag_chain = (
     | StrOutputParser()
 )
 
+# Aquí puedes cambiar la pregunta fácilmente
 query = "¿Cuál es la última tarea de la lista?"
 result = rag_chain.invoke(query)
 
